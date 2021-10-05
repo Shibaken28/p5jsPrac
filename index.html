@@ -7,18 +7,8 @@
   <script type="text/javascript" src="sample.js"></script>
 </head>
 <body>
-  <div class="header">Header領域</div>
-  <div class="main">
-    <h1>見出し</h1>
-    <p>コンテンツ</p>
-    <img src="img/sample1.jpg">
-  </div>
-  <div class="footer">
-    <span>Footer領域</span>
-    <a href="#">リンク</a>
-  </div>
-  <script>
-      let handleRequest = function (request, response) {
+    <script>
+        let handleRequest = function (request, response) {
   response.writeHead(200, {'Content-Type': 'text/plain'});
   response.end('Hello World\n');
 };
@@ -26,6 +16,6 @@
 const http = require('http');
 let server = http.createServer(handleRequest);
 server.listen(8080);
-  </script>
+
+    </script>
 </body>
-</html>
