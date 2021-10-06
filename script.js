@@ -17,7 +17,7 @@ const Peer = window.Peer;
   `.trim();
 
   const peer = (window.peer = new Peer({
-    key:'5a1f4049-77cb-4da2-8a06-06a08d9f14fa',
+    key:'#######################',
     debug: 3,
   }));
 
