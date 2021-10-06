@@ -18,6 +18,7 @@ function getCookieArray(){
 var arr = getCookieArray();
 var value = 'key1の値：' + arr['key1'];
 // key1の値：val1
+console.log(value);
 
 var kigen = 30; //Cookieの期限（1ヶ月とする）←適宜、適切な期限を設定
 var nowdate = new Date(); //現在の日付データを取得
