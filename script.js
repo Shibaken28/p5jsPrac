@@ -1,4 +1,36 @@
 const Peer = window.Peer;
+var str = document.cookie;
+
+function getCookieArray(){
+    var arr = new Array();
+    if(document.cookie != ''){
+        var tmp = document.cookie.split('; ');
+        for(var i=0;i<tmp.length;i++){
+            var data = tmp[i].split('=');
+            arr[data[0]] = decodeURIComponent(data[1]);
+        }
+    }
+    return arr;
+}
+
+// keyを指定して取得
+// 「 key1=val1; key2=val2; key3=val3; ・・・ 」というCookie情報が保存されているとする
+var arr = getCookieArray();
+var value = 'key1の値：' + arr['key1'];
+// key1の値：val1
+
+var kigen = 30; //Cookieの期限（1ヶ月とする）←適宜、適切な期限を設定
+var nowdate = new Date(); //現在の日付データを取得
+nowdate.setTime(nowdate.getTime() + kigen*24*60*60*1000); //1ヶ月後の日付データを作成
+var kigendate = nowdate.toGMTString(); //GMT形式に変換して変数kigendateに格納
+var cookievalue = "session_id=user_0001; ";
+var expires = "expires=" + kigendate + "; ";
+var path = "path=/";
+var dt = new Date('1999-12-31T23:59:59Z'); // 過去の日付をGMT形式に変換
+
+document.cookie = cookievalue + expires + path;
+
+
 
 (async function main() {
   const localId = document.getElementById('js-local-id');
